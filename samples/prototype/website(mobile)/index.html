@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link href="./stylesheet/stylesheet.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript"
+	src="./javaScript/jquery/jquery-1.6.1.min.js"></script>
+
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	var level = 1;
+	function getStorage() {
+		return localStorage.getItem("data")
+	}
+	function setStorage(data) {
+		localStorage.setItem("data", "4");
+	}
+
+	$('.target').change(function() {
+		alert('Handler for .change() called.');
+	});
+
+	$(document).ready(function() {
+		$('.mySelect').change(function() {
+			var arg = $('.mySelect').val();
+			localStorage.setItem("data", arg);
+			location.reload();
+			
+		});
+		//setStorage();
+		//alert(getStorage());
+		var storage = getStorage();
+		if (storage == 1) {
+			$(".full").hide();
+			$(".light").hide();
+			$(".inter").hide();
+			$(".expert").hide();
+		} else if (storage == 2) {
+			$(".full").hide();
+			$(".light").hide();
+			$(".inter").hide();
+		} else if (storage == 3) {
+			$(".full").hide();
+			$(".inter").hide();
+		}
+	});
+	function testSupport() {
+		if (localStorage)
+			return "Local Storage: Supported";
+		else
+			return "Local Storage: Unsupported";
+	}
+</script>
+<body>
+	<div id="container">
+		<div id="test">
+			<select class="mySelect">
+				<option value="0">select</option>
+				<option value="1">expert</option>
+				<option value="2">light</option>
+				<option value="3">inter</option>
+				<option value="4">full</option>
+			</select>
+		</div>
+		<div id="departure">
+			<div style="background-color: #74760A; color: #FFFFFF">
+				<span style="background-color: #757C31"><b>Departure</b></span>
+				<div class="inter" style="font-size: 12px">
+					<span>Lorem ipsum dolor sit amet, sapien etiam, nunc amet
+						dolor ac odio mauris justo. Luctus arcu, urna praesent at id
+						quisque ac. Arcu massa</span>
+				</div>
+			</div>
+			<br /> <br /> <span>From</span>&nbsp;&nbsp; <select
+				style="width: 120px;"></select> <br /> <span>To</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select
+				style="width: 120px; height: 23px"></select>
+			<div class="buttons">
+				<div class="left">
+					<div class="inter">
+						<a type="button" class="button"> Help </a>
+					</div>
+				</div>
+				<div class="right">
+					<a type="button" class="button">search</a>
+				</div>
+			</div>
+		</div>
+		<br /> <br />
+		<div id="check" style="margin-top: 20px">
+			<div style="background-color: #74760A; color: #FFFFFF">
+				<span><b>Ticket Check</b></span>
+				<div class="light" style="font-size: 12px">
+					<span>Lorem ipsum dolor sit amet, sapien etiam, nunc amet
+						dolor ac odio mauris justo. Luctus arcu, urna praesent at id
+						quisque ac. Arcu massa</span>
+				</div>
+			</div>
+			<br /> <br /> <span>Ticket </span><select style="width: 120px;"></select>
+			<br /> <span>Code </span>&nbsp;&nbsp;<select style="width: 120px;"><br></select>
+			<div class="buttons">
+				<div class="left">
+					<div class="inter">
+						<a type="button" class="button"> Help </a>
+					</div>
+				</div>
+				<div class="right">
+					<a type="button" class="button">search</a>
+				</div>
+			</div>
+		</div>
+		<div id="image-icon"
+			style="padding-top: 20px; width: 253px; position: static; margin-top: 20px">
+			<a href=""> <img src="./images/31.png"
+				style="height: 50px; width: 50px;"></a><a href=""
+				class="expert"> <img src="./images/4.png"
+				style="height: 50px; width: 50px;">
+			</a> <a href=""> <img src="./images/14.png"
+				style="height: 50px; width: 50px;"></a> <a href=""
+				class="expert"> <img src="./images/2.png"
+				style="height: 50px; width: 50px;">
+			</a>
+
+		</div>
+	</div>
+</body>
+</html>
