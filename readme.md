@@ -1,3 +1,5 @@
 #Adaptive-UI-Framework
 
-Project just initialized 
+Project just initialized
+
+liense - MIT
