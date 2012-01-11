@@ -23,6 +23,8 @@
 	});
 
 	$(document).ready(function() {
+		$('.departure_content').addClass("inter");
+
 		$('.mySelect').change(function() {
 			var arg = $('.mySelect').val();
 			localStorage.setItem("data", arg);
@@ -67,7 +69,7 @@
 		<div id="departure">
 			<div style="background-color: #74760A; color: #FFFFFF">
 				<span style="background-color: #757C31"><b>Departure</b></span>
-				<div class="inter" style="font-size: 12px">
+				<div class="departure_content" style="font-size: 12px">
 					<span>Lorem ipsum dolor sit amet, sapien etiam, nunc amet
 						dolor ac odio mauris justo. Luctus arcu, urna praesent at id
 						quisque ac. Arcu massa</span>
