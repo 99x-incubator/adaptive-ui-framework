@@ -69,6 +69,7 @@ function CheckBSupport() {
 }
 
 
+
 //TODO catch repeating elements
 var clusterMapping= {
 	"inter" : [ ".departure_content", ".help_button" ],
