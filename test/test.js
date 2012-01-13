@@ -1,5 +1,10 @@
-function clustering() {
-	$.each(getClusterArray(), function(key_val, cluster) {
+/**
+ * Apply clustering to each cluster in given cluster map object
+ * 
+ * @param clusters set of clusters
+ */
+function clustering(clusters) {
+	$.each(clusters, function(key_val, cluster) {
 		$.each(cluster, function(index, itemData) {
 
 			var placeHolder = itemData;
@@ -10,40 +15,32 @@ function clustering() {
 	});
 }
 
-/*
- * return cluster for a given cluster id
- * 
- * @param clusterId cluster ID
- */
 
-function findCluster(clusterId) {
-	return [clusterId];
-}
-
-/*
+/**
  * @returns a map of clusters
  */
 function getClusterArray() {
 	return clusterMapping;
 }
 
-// TODO catch repeating elements
-var clusterMapping= {
-	"inter" : [ ".departure_content", ".help_button" ],
-	"expert" : [ ".dynamic_images" ],
-	"full" : [ ".Ticket_Check_content" ]
-};
 
-function getStorage() {
-	return localStorage.getItem("data");
+/**
+ * @param key name of data object
+ * @returns Local browser local storage for given key
+ */
+function getStorage(key) {
+	return localStorage.getItem(key);
 }
 
 
-
+/**
+ * Rendering logic for the application
+ * This part comes to UI level. User should manually define this
+ */
 function renderingLogic() {
 	
 	localStorage.setItem("data", 2);
-	var storage = getStorage();
+	var storage = getStorage("data");
 	if (storage == 1) {
 		$(".full").hide();
 		$(".light").hide();
@@ -59,11 +56,22 @@ function renderingLogic() {
 	}
 }
 
-function testSupport() {
+
+/**
+ * Check browser support
+ */
+function CheckBSupport() {
 	if (localStorage)
-		return "Local Storage: Supported";
+		console.log ("Local Storage: Supported");
 	else
-		return "Local Storage: Unsupported";
+		console.error("Local Storage: Unsupported");
 }
 
+
+//TODO catch repeating elements
+var clusterMapping= {
+	"inter" : [ ".departure_content", ".help_button" ],
+	"expert" : [ ".dynamic_images" ],
+	"full" : [ ".Ticket_Check_content" ]
+};
 
