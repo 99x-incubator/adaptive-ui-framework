@@ -7,8 +7,11 @@
 <script type="text/javascript"
 	src="./javaScript/jquery/jquery-1.6.1.min.js"></script>
 
+<script type="text/javascript" src="./javaScript/test.js"></script>
+
 <title>Insert title here</title>
 </head>
+
 <script type="text/javascript">
 	var level = 1;
 	function getStorage() {
@@ -23,16 +26,32 @@
 	});
 
 	$(document).ready(function() {
-		$('.departure_content').addClass("inter");
+
+		clustering();
+		/* $('.departure_content').addClass("inter");
+		$('.help_button').addClass("inter");
+		$('.dynamic_images').addClass('expert');
+		$('.Ticket_Check_content').addClass('light'); */
 
 		$('.mySelect').change(function() {
 			var arg = $('.mySelect').val();
 			localStorage.setItem("data", arg);
 			location.reload();
-			
 		});
+
 		//setStorage();
 		//alert(getStorage());
+		renderingLogic();
+		
+	});
+	function browserSupport() {
+		if (localStorage)
+			return "Local Storage: Supported";
+		else
+			return "Local Storage: Unsupported";
+	}
+	
+	function renderingLogic() {
 		var storage = getStorage();
 		if (storage == 1) {
 			$(".full").hide();
@@ -47,14 +66,10 @@
 			$(".full").hide();
 			$(".inter").hide();
 		}
-	});
-	function testSupport() {
-		if (localStorage)
-			return "Local Storage: Supported";
-		else
-			return "Local Storage: Unsupported";
 	}
 </script>
+
+
 <body>
 	<div id="container">
 		<div id="test">
@@ -80,9 +95,8 @@
 				style="width: 120px; height: 23px"></select>
 			<div class="buttons">
 				<div class="left">
-					<div class="inter">
-						<a type="button" class="button"> Help </a>
-					</div>
+					<a type="button" class="button help_button"> Help </a>
+
 				</div>
 				<div class="right">
 					<a type="button" class="button">search</a>
@@ -93,7 +107,7 @@
 		<div id="check" style="margin-top: 20px">
 			<div style="background-color: #74760A; color: #FFFFFF">
 				<span><b>Ticket Check</b></span>
-				<div class="light" style="font-size: 12px">
+				<div class="Ticket Check content" style="font-size: 12px">
 					<span>Lorem ipsum dolor sit amet, sapien etiam, nunc amet
 						dolor ac odio mauris justo. Luctus arcu, urna praesent at id
 						quisque ac. Arcu massa</span>
@@ -103,9 +117,7 @@
 			<br /> <span>Code </span>&nbsp;&nbsp;<select style="width: 120px;"><br></select>
 			<div class="buttons">
 				<div class="left">
-					<div class="inter">
-						<a type="button" class="button"> Help </a>
-					</div>
+					<a type="button" class="button help_button"> Help </a>
 				</div>
 				<div class="right">
 					<a type="button" class="button">search</a>
@@ -116,14 +128,13 @@
 			style="padding-top: 20px; width: 253px; position: static; margin-top: 20px">
 			<a href=""> <img src="./images/31.png"
 				style="height: 50px; width: 50px;"></a><a href=""
-				class="expert"> <img src="./images/4.png"
+				class="dynamic_images"> <img src="./images/4.png"
 				style="height: 50px; width: 50px;">
 			</a> <a href=""> <img src="./images/14.png"
 				style="height: 50px; width: 50px;"></a> <a href=""
-				class="expert"> <img src="./images/2.png"
+				class="dynamic_images"> <img src="./images/2.png"
 				style="height: 50px; width: 50px;">
 			</a>
-
 		</div>
 	</div>
 </body>

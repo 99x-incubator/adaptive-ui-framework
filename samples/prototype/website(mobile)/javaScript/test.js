@@ -31,7 +31,7 @@ function getClusterArray() {
 var clusterMapping= {
 	"inter" : [ ".departure_content", ".help_button" ],
 	"expert" : [ ".dynamic_images" ],
-	"full" : [ ".Ticket_Check_content" ]
+	"light" : [ ".Ticket_Check_content" ]
 };
 
 function getStorage() {
