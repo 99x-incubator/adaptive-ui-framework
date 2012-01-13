@@ -4,6 +4,7 @@
  * @param clusters set of clusters
  */
 function clustering(clusters) {
+	CheckBSupport();
 	$.each(clusters, function(key_val, cluster) {
 		$.each(cluster, function(index, itemData) {
 
@@ -39,7 +40,7 @@ function getStorage(key) {
  */
 function renderingLogic() {
 	
-	localStorage.setItem("data", 2);
+	localStorage.setItem("data", 3);
 	var storage = getStorage("data");
 	if (storage == 1) {
 		$(".full").hide();

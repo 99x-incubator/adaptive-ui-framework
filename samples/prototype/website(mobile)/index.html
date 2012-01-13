@@ -17,6 +17,7 @@
 	function getStorage() {
 		return localStorage.getItem("data")
 	}
+	
 	function setStorage(data) {
 		localStorage.setItem("data", "4");
 	}
@@ -27,7 +28,7 @@
 
 	$(document).ready(function() {
 
-		clustering();
+		clustering(getClusterArray());
 		/* $('.departure_content').addClass("inter");
 		$('.help_button').addClass("inter");
 		$('.dynamic_images').addClass('expert');
