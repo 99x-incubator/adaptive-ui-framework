@@ -6,6 +6,7 @@ var clusterMapping = {
 		"full" : [ ".Ticket_Check_content" ]
 	},
 	"controllers" : {
-		
+		"departure":['#departure .from','#departure .to', '#departure .button help_button','#departure .btnSearch'],
+		"ticketCheck":['#check .ticket','#check .code','#check help_button', '#check .search']
 	}
 };
