@@ -1,2 +1,2 @@
 ##Framework
-This folder contain development version .
+This folder contain current development version .
