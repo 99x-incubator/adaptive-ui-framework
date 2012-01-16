@@ -1,0 +1,11 @@
+// TODO catch repeating elements
+var clusterMapping = {
+	"content" : {
+		"inter" : [ ".departure_content", ".help_button" ],
+		"expert" : [ ".dynamic_images" ],
+		"full" : [ ".Ticket_Check_content" ]
+	},
+	"controllers" : {
+		
+	}
+};

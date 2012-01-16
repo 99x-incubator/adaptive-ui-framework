@@ -2,73 +2,32 @@
 <html>
 <head>
 
-<link href="./stylesheet/stylesheet.css" rel="stylesheet"
-	type="text/css" />
 
-<script type="text/javascript" src="./javaScript/test.js"></script>
+<script type="text/javascript"
+	src="../../.././lib/javascripts/framework.js"></script>
 
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	
+
+<link href="./stylesheet/stylesheet.css" rel="stylesheet"
+	type="text/css" />
+
 <title>Insert title here</title>
 </head>
 
 <script type="text/javascript">
-	var level = 1;
-	function getStorage() {
-		return localStorage.getItem("data")
-	}
-	
-	function setStorage(data) {
-		localStorage.setItem("data", "4");
-	}
-
-	$('.target').change(function() {
-		alert('Handler for .change() called.');
-	});
-
 	$(document).ready(function() {
-
-		clustering(getClusterArray());
-		/* $('.departure_content').addClass("inter");
-		$('.help_button').addClass("inter");
-		$('.dynamic_images').addClass('expert');
-		$('.Ticket_Check_content').addClass('light'); */
 
 		$('.mySelect').change(function() {
 			var arg = $('.mySelect').val();
+			console.log(arg);
 			localStorage.setItem("data", arg);
 			location.reload();
 		});
-
-		//setStorage();
-		//alert(getStorage());
+		clustering(getContent());
 		renderingLogic();
-		
+
 	});
-	function browserSupport() {
-		if (localStorage)
-			return "Local Storage: Supported";
-		else
-			return "Local Storage: Unsupported";
-	}
-	
-	function renderingLogic() {
-		var storage = getStorage();
-		if (storage == 1) {
-			$(".full").hide();
-			$(".light").hide();
-			$(".inter").hide();
-			$(".expert").hide();
-		} else if (storage == 2) {
-			$(".full").hide();
-			$(".light").hide();
-			$(".inter").hide();
-		} else if (storage == 3) {
-			$(".full").hide();
-			$(".inter").hide();
-		}
-	}
 </script>
 
 
